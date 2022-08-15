@@ -1,6 +1,6 @@
 package com.jvmflix.movie;
-
-enum Interest {
+// making this enum public because User needs to pull this info
+public enum Interest {
     NATURE,
     LOVE,
     FOOD,

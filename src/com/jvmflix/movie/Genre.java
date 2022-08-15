@@ -1,6 +1,7 @@
 package com.jvmflix.movie;
 
-enum Genre {
+// Making Genre public because the User class needs it
+public enum Genre {
 
     COMEDY,
     ACTION,
