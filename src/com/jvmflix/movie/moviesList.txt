@@ -1,15 +1,13 @@
-Index ———Title————————————————————-------------------------Genre————ReleaseDate———Rating————------Interest
 0	Dumb & Dumber                                          Comedy   1994          R               Animals
 1	Dolemite Is My Name      		                       Comedy   2019          R               Food
-2	The Other Guys 		                         		   Comedy.  2010          R               Sports
-3	Just Go With It                                        Comedy,  2011          PG-13           Animals
-4	Her                                                    Comedy,  2013          R               Sports
-5	Eurovision Song Contest: The Story of Fire Saga	       Comedy,  2020          PG-13           Nature
-6	Lady Bird,					                           Comedy,  2017          R               Food
-7	The Fundamentals of Caring,	                           Comedy,	2016          R               Nature
+2	The Other Guys 		                         		   Comedy  2010          R               Sports
+3	Just Go With It                                        Comedy  2011          PG-13           Animals
+4	Her                                                    Comedy  2013          R               Sports
+5	Eurovision Song Contest: The Story of Fire Saga	       Comedy  2020          PG-13           Nature
+6	Lady Bird,					                           Comedy 2017          R               Food
+7	The Fundamentals of Caring,	                           Comedy	2016          R               Nature
 8	The Mitchell vs. the Machines	                       Comedy	2021          PG              Nature
 9	Mindhorn	                                           Comedy	2016          R               Animals
-
 10 	Leon: the Professional 	                               Action 1994            R               Nature
 11	Rambo	                                               Action 2008            R               Sports
 12 	The Amazing Spider-Man	                               Action 2012            PG-13           Food
@@ -20,7 +18,6 @@ Index ———Title————————————————————
 17	The Sleepover	                                       Action 2020            PG              Animals
 18	Project Power	                                       Action 2020            R               Sports
 19	The Last Samurai                                       Action 2003            R               Food
-
 20 	To All the Boys I’ve Loved Before	                    Romance 2018          PG-13          Nature
 21 	My Fair Lady 	                                        Romance 1964          G              Love
 22 	When Harry Met Sally		                            Romance 1989          R              Love
@@ -31,7 +28,6 @@ Index ———Title————————————————————
 27 	You’ve Got Mail	                                        Romance	1998          PG             Sports
 28 	Phantom Thread 	                                        Romance 2017          R              Love
 29 	She’s Gotta Have It	                                    Romance 1986          R              Food
-
 30 	His House	                                            Horror 2020           PG-13          Sports
 31	Creep I	                                                Horror 2004           R              Sports
 32 	Under the Shadow	                                    Horror 2016           PG-13          Animals
@@ -42,7 +38,6 @@ Index ———Title————————————————————
 37   The Conjuring		                                    Horror 2013           R              Sports
 38 	Hush	                                                Horror 2016           R              Nature
 39 	Gerald’s Game	                                        Horror 2017           R              Food
-
 40	Rebecca 	                                            Drama 2020            PG-13          Sports
 41	Purple Hearts	                                        Drama 2022            PG-13          Sports
 42	Beauty 	                                                Drama 2022            G              Animals
@@ -53,7 +48,6 @@ Index ———Title————————————————————
 47	Operation Mincemeat	                                    Drama 2021            PG-13          Sports
 48	The Hall of It	                                        Drama 2020            R              Love
 49	The King 	                                            Drama 2019            R              Animals
-
 50	Blade Runner	                                        Science Fiction 1982 R              Nature
 51	Sorry to Bother You	                                    Science Fiction 2018 R              Nature
 52	Blade Runner 2049	                                    Science Fiction 2017 R              Nature
@@ -64,7 +58,6 @@ Index ———Title————————————————————
 57	The Midnight Sky	                                    Science Fiction 2020 PG-13          Sports
 58	The Old Guard	                                        Science Fiction 2020 R              Love
 59	The Platform	                                        Science Fiction 2019 R              Love
-
 60 	Nightbooks	                                            Fantasy 2021         PG              Love
 61 	Dark Shadows	                                        Fantasy 2012         PG-13          Sports
 62 	Closet Monster	                                        Fantasy 2015         R              Love
@@ -75,7 +68,6 @@ Index ———Title————————————————————
 67 	Errementari	                                            Fantasy 2017         R              Food
 68 	Big Fish	                                            Fantasy 2003         R                 Animals
 69  The Golden Compass		                                Fantasy 2007         PG-13          Sports
-
 70	The Sea Beast	                                        Children Film 2022   PG             Love
 71	A Shaun the Sheep Movie: Farmageddon	                Children Film 2019   G              Nature
 72	Paddington	                                            Children Film 2014   PG             Animals
@@ -86,7 +78,6 @@ Index ———Title————————————————————
 77	Cloudy with a Chance of Meatballs	                    Children Film 2009   PG             Love
 78	Vivo 	                                                Children Film 2021   PG             Love
 79	Puss in Boots	                                        Children Film 2011   PG             Love
-
 80	Blame	                                                Animation 2017          PG-13           Nature
 81	Mirai	                                                Animation 2018          G               Animals
 82	A Silent Voice	                                        Animation 2016          G               Animals
@@ -97,7 +88,6 @@ Index ———Title————————————————————
 87	The End of Evangelion	                                Animation 1997          R               Sports
 88	The Witcher: Nightmare of the Wolf	                    Animation 2011          R               Sports
 89	How to Train Your Dragon 2	                            Animation 2003          PG              Sports
-
 90	The Tinder Swindler	                                     Documentary 2022       R               Nature
 91	Our Father	                                             Documentary 2022       R               Love
 92	The Sparks Brothers 	                                 Documentary 2021       R               Food
