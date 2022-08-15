@@ -69,6 +69,8 @@ public class Movie {
 
     public void setInterest(Interest interest) {
         this.interest = interest;
+
+
     }
 
     @Override
