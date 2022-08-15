@@ -1,153 +1,131 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2578
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Bold;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\margl1440\margr1440\vieww28980\viewh19880\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+Team JVMFlix Movies
 
-\f0\fs36 \cf0 Team JVMFlix Movies\
-\
+Genres: Comedy, Action, Romance, Horror, Drama, Science Fiction, Fantasy, Children Film, Animation, Documentary
+Ratings: G, PG, PG-13(TV14), R(MA)
+World Cinema: Foreign or Domestic
+Release Date: 19XX or 20XX
+Interest: Nature, Love, Food, Animals, Sports
 
-\f1\b Genres: 
-\f0\b0 Comedy, Action, Romance, Horror, Drama, Science Fiction, Fantasy, Children Film, Animation, Documentary\
 
-\f1\b Ratings: 
-\f0\b0 G, PG, PG-13, R\
+Index ———Title————————————————————Genre————ReleaseDate———Rating————WorldCinema———Interest	
+0	Dumb & Dumber, 		                                                        Comedy,          1994,                       R
+1	Dolemite Is My Name, 		                       	             Comedy,          2019,                       R
+2	The Other Guys,		                       		                    Comedy.          2010,                       R
+3	Just Go With It,                                                                   Comedy,          2011,                       PG-13
+4	Her, Comedy, 2013, R
+5	Eurovision Song Contest: The Story of Fire Saga,	            Comedy,           2020,                     PG-13
+6	Lady Bird,					                                  Comedy,          2017,                     R
+7	The Fundamentals of Caring,	Comedy,	2016, R
+8	The Mitchell vs. the Machines	Comedy	2021, PG
+9	Mindhorn	Comedy	2016 , R
+Source: https://www.pinkvilla.com/entertainment/hollywood/best-funny-movies-netflix-1148721
 
-\f1\b World Cinema:
-\f0\b0  Foreign or Domestic\
+10 	Leon: the Professional 	Action 1994 R
+11	Rambo	Action 2008 R
+12 	The Amazing Spider-Man	Action	2012 PG-13	
+13	Mission: Impossible	Action 1996 PG-13
+14	War of Worlds Action 2005 PG-13
+15	Army of the Dead	Action 2021 R
+16	Extraction 	Action 2020 R
+17	The Sleepover	Action 2020 PG
+18	Project Power	Action 2020 R
+19	The Last Samurai 	Action 2003 R
+source: https://parade.com/905888/samuelmurrian/netflix-best-action-movies/
 
-\f1\b Release Date: 
-\f0\b0 19XX or 20XX\
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+20 	To All the Boys I’ve Loved Before	Romance 2018 PG-13
+21 	My Fair Lady 	Romance 1964 G
+22 	When Harry Met Sally		Romance 1989 R
+23 	Silver Linings Playbook	Romance 2012 R
+24 	A Perfect Pairing		Romance 2022 PG-13
+25 	Set It Up 	Romance 2018 PG-13
+26 	Always Be My Baby	Romance	2019 G
+27 	You’ve Got Mail	Romance	1998 PG
+28 	Phantom Thread 	Romance 2017 R
+29 	She’s Gotta Have It	Romance 1986 R
+source: https://www.goodhousekeeping.com/life/entertainment/g25575811/romantic-movies-netflix/
 
-\f1\b \cf0 Interest: 
-\f0\b0 Nature, Love, Food, Animals, Sports\
-\
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-\cf0 \
-Index \'97\'97\'97Title\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97Genre\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97ReleaseDate\'97\'97\'97\'97\'97WorldCinema\'97\'97\'97\'97\'97\'97\'97\'97\'97Interest	\
-0	Dumb & Dumber, Comedy,	1994		\
-1	Dolemite Is My Name, Comed,y 2019\
-2	The Other Guys,Comedy, 2010\
-3	Just Go With It, Comedy, 2011\
-4	Her, Comedy, 2013\
-5	Eurovision Song Contest: The Story of Fire Saga, Comedy, 2020\
-6	Lady Bird,Comedy, 2017	\
-7	The Fundamentals of Caring	Comedy	2016\
-8	The Mitchell vs. the Machines	Comedy	2021\
-9	Mindhorn	Comedy	2016\
-Source: https://www.pinkvilla.com/entertainment/hollywood/best-funny-movies-netflix-1148721\
-\
-10 	Leon: the Professional 	Action 1994\
-11	Rambo	Action 2008\
-12 	The Amazing Spider-Man	Action	2012	\
-13	Mission: Impossible	Action 1996\
-14	War of Worlds Action 2005\
-15	Army of the Dead	Action 2021\
-16	Extration 	Action 2020\
-17	The Sleepover	Action 2020\
-18	Project Power	Action 2020\
-19	The Last Samurai 	Action 2003\
-source: https://parade.com/905888/samuelmurrian/netflix-best-action-movies/\
-\
-20 	To All the Boys I\'92ve Loved Before	Romance 2018\
-21 	My Fair Lady 	Romance 1964\
-22 	When Harry Met Sally		Romance 1989\
-23 	Silver Linings Playbook	Romance 2012\
-24 	A Perfect Pairing		Romance 2022\
-25 	Set It Up 	Romance 2018\
-26 	Always Be My Baby	Romance	2019\
-27 	You\'92ve Got Mail	Romance	1998\
-28 	Phantom Thread 	Romance 2017\
-29 	She\'92s Gotta Have It	Romance 1986\
-source: https://www.goodhousekeeping.com/life/entertainment/g25575811/romantic-movies-netflix/\
-\
-30 	His House	Horror 2020\
-31	Creep	Horror 2017\
-32 	Under the Shadow	Horror 2016\
-33 	Jaws	Horror 1975\
-34 	The Old Ways	Horror 2021\
-35 	Pan\'92s Labyrinth	Horror 2006\
-36 	Sweetheart	Horror 2019\
-37  The Conjuring		Horror 2013\
-38 	Hush	Horror 2016\
-39 	Gerald\'92s Game	Horror 2017\
-Source: https://editorial.rottentomatoes.com/guide/best-netflix-horror-movies-to-watch-right-now/\
-\
-40	Rebecca 	Drama 2020\
-41	Purple Hearts	Drama 2022\
-42	Beauty 	Drama 2022\
-43	Hustle	Drama 2022\
-44	Sorry to Bother You	Drama 2018\
-45	Okja	Drama 2017\
-46	I\'92m Thinking of Ending Things	Drama 2020\
-47	Operation Mincemeat	Drama 2021\
-48	The Hall of It	Drama 2020\
-49	The King 	Drama 2019\
-Source:  https://collider.com/best-dramas-on-netflix/\
-\
-50	Blade Runner	Science Fiction 1982 R-Rating\
-51	Sorry to Bother You	Science Fiction 2018 R-Rating\
-52	Blade Runner 2049	Science Fiction 2017 R-Rating\
-53	Gattaca	Science Fiction 1997\
-54	Contagion	Science Fiction 2011\
-55	Starship Troopers 	Science Fiction 1997 R-Rating\
-56	Oxygen	Science Fiction 2021\
-57	The Midnight Sky	Science Fiction 2020\
-58	The Old Guard	Science Fiction 2020 R-Rating\
-59	The Platform	Science Fiction 2019\
-Source: https://www.pastemagazine.com/movies/netflix/best-sci-fi-movies-on-netflix-streaming/\
-\
-60 		Fantasy\
-61 		Fantasy\
-62 		Fantasy\
-63 		Fantasy\
-64 		Fantasy\
-65 		Fantasy\
-66 		Fantasy\
-67 		Fantasy\
-68 		Fantasy\
-69 		Fantasy\
-Source: https://www.cnet.com/culture/entertainment/the-absolute-best-fantasy-movies-to-check-out-on-netflix-this-weekend/\
-\
-70		Children Film\
-71		Children Film\
-72		Children Film\
-73		Children Film\
-74		Children Film\
-75		Children Film\
-76		Children Film\
-77		Children Film\
-78		Children Film\
-79		Children Film\
-Source: https://www.goodhousekeeping.com/life/parenting/g23406794/best-kids-movies-on-netflix/\
-\
-80	Blame	Animation 2017 Foreign\
-81	Mirai	Animation 2018 Foreign\
-82	A Silent Voice	Animation 2016  Foreign\
-83	I Lost My Body	Animation 2019\
-84	Mobile Suit Gundam: Char\'92s Counterattack		Animation 1988\
-85	Apollo 10 1/2: A Space Age Childhood	Animation 2022\
-86	Lu Over the Wall	Animation 2018 Foreign G-Rating\
-87	The End of Evangelion	Animation 1997\
-88	The Witcher: Nightmare of the Wolf	Animation 201 MA-Rating\
-89	How to Train Your Dragon 2	Animation	PG-Rating\
-Source: https://www.pastemagazine.com/movies/netflix/the-best-animated-movies-on-netflix/\
-\
-90	The Tinder Swindler	Documentary 2022\
-91	Our Father	Documentary 2022\
-92	The Sparks Brothers 	Documentary 2021\
-93	Sad Hill Unearthed	Documentary 2017\
-94	Rolling Thunder Revenue	Documentary 2019\
-95	Made You Look: A True Story About Fake Art	Documentary 2020\
-96	The Bleeding Edge	Documentary 2018\
-97	Bob Ross: Happy Accidents, Betrayal &Greed	Documentary 2021\
-98	David Attenborough: A Life on Our Planet	Documentary 2020\
-99	Misha and the Wolves	Documentary 2021\
-Source: https://collider.com/best-documentaries-on-netflix/\
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-\cf0 \
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-\cf0 \
-}
+30 	His House	Horror 2020 PG-13
+31	Creep I	Horror 2004 R
+32 	Under the Shadow	Horror 2016 PG-13
+33 	Jaws	Horror 1975
+34 	The Old Ways	Horror 2021 PG R
+35 	Pan’s Labyrinth	Horror 2006 R
+36 	Sweetheart	Horror 2019 PG-13
+37   The Conjuring		Horror 2013 R
+38 	Hush	Horror 2016 R
+39 	Gerald’s Game	Horror 2017 R
+Source: https://editorial.rottentomatoes.com/guide/best-netflix-horror-movies-to-watch-right-now/
+
+40	Rebecca 	Drama 2020 PG-13
+41	Purple Hearts	Drama 2022 PG-13
+42	Beauty 	Drama 2022 G
+43	Hustle	Drama 2022 R
+44	Sorry to Bother You	Drama 2018 R
+45	Okja	Drama 2017 R
+46	I’m Thinking of Ending Things	Drama 2020 R
+47	Operation Mincemeat	Drama 2021 PG-13
+48	The Hall of It	Drama 2020 R
+49	The King 	Drama 2019 R
+Source:  https://collider.com/best-dramas-on-netflix/
+
+50	Blade Runner	Science Fiction 1982 R
+51	Sorry to Bother You	Science Fiction 2018 R
+52	Blade Runner 2049	Science Fiction 2017 R
+53	Gattaca	Science Fiction 1997 PG-13
+54	Contagion	Science Fiction 2011PG-13
+55	Starship Troopers 	Science Fiction 1997 R
+56	Oxygen	Science Fiction 2021PG-13
+57	The Midnight Sky	Science Fiction 2020 PG-13
+58	The Old Guard	Science Fiction 2020 R
+59	The Platform	Science Fiction 2019 R
+Source: https://www.pastemagazine.com/movies/netflix/best-sci-fi-movies-on-netflix-streaming/
+
+60 	Nightbooks	Fantasy 2021PG
+61 	Dark Shadows	Fantasy 2012 PG-13
+62 	Closet Monster	Fantasy 2015 (NOT RATED)
+63 	A Monster Calls	Fantasy 2016 PG-13
+64 	The Water Man	Fantasy 2020 PG
+65 	The Old Guard	Fantasy 2020 R
+66 	The Sea Beast	Fantasy 2022 PG
+67 	Errementari	Fantasy 2017 R
+68 	Big Fish	Fantasy 2003 R
+69  The Golden Compass		Fantasy 2007 PG-13
+Source: https://www.cnet.com/culture/entertainment/the-absolute-best-fantasy-movies-to-check-out-on-netflix-this-weekend/
+
+70	The Sea Beast	Children Film 2022 PG
+71	A Shaun the Sheep Movie: Farmageddon	Children Film 2019 G
+72	Paddington	Children Film 2014 PG
+73	How to Train Your Dragon	Children Film 2010 PG
+74	Pretty Guardian Sailor Moon Eternal: The Movie	Children Film 2021 PG-13
+75	The Boy Who Harnessed the Wind	Children Film 2019 PG
+76	Enola Holmes	Children Film	2020 PG-13
+77	Cloudy with a Chance of Meatballs	Children Film 2009 PG
+78	Vivo 	Children Film 2021 PG
+79	Puss in Boots	Children Film 2011 PG
+Source: https://www.goodhousekeeping.com/life/parenting/g23406794/best-kids-movies-on-netflix/
+
+80	Blame	Animation 2017 PG-13
+81	Mirai	Animation 2018 Foreign (Not Rated)
+82	A Silent Voice	Animation 2016  Foreign (Not Rated) 
+83	I Lost My Body	Animation 2019 R
+84	Mobile Suit Gundam: Char’s Counterattack		Animation 1988 Foreign PG-13
+85	Apollo 10 1/2: A Space Age Childhood	Animation 2022 PG-13
+86	Lu Over the Wall	Animation 2018 Foreign G
+87	The End of Evangelion	Animation 1997 R
+88	The Witcher: Nightmare of the Wolf	Animation 201 R
+89	How to Train Your Dragon 2	Animation	PG
+Source: https://www.pastemagazine.com/movies/netflix/the-best-animated-movies-on-netflix/
+
+90	The Tinder Swindler	Documentary 2022 R
+91	Our Father	Documentary 2022 R
+92	The Sparks Brothers 	Documentary 2021 R
+93	Sad Hill Unearthed	Documentary 2017 PG-13
+94	Rolling Thunder Revenue	Documentary 2019 R
+95	Made You Look: A True Story About Fake Art	Documentary 2020 PG-13 
+96	The Bleeding Edge	Documentary 2018 PG-13
+97	Bob Ross: Happy Accidents, Betrayal & Greed	Documentary 2021 PG-13
+98	David Attenborough: A Life on Our Planet	Documentary 2020 PG
+99	Misha and the Wolves	Documentary 2021 PG-13
+Source: https://collider.com/best-documentaries-on-netflix/
+
+
