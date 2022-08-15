@@ -72,6 +72,7 @@ public class User {
             Movie movie = new Movie(id, title, genre, dateRelease, rating, interest);
             entireDatabase.add(movie);
 
+
         }
 
             return entireDatabase;
