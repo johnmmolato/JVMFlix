@@ -25,7 +25,7 @@ public class UserDatabase {
 	}
 
 	public static @NotNull
-	ArrayList readFromFile(String fileName){
+	Arraylist readFromFile(String fileName){
 		ArrayList<String> userList = new ArrayList<>();
 		try{
 			Scanner scanner = new Scanner(new File(fileName));
