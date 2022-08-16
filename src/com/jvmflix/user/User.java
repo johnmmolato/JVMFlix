@@ -14,6 +14,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+
+
 
 public class User {
 
@@ -55,14 +61,6 @@ public class User {
 
     }
 
-    public void saveForLater() {
-
-    }
-
-    public void saveOnComputer() {
-        Movie movie = getSelectedMovie();
-        movie.download();
-
     }
 
     public List<Movie> videoList( ) throws IOException {
@@ -71,7 +69,7 @@ public class User {
         Scanner is going to read the list of movies text file, filtering by interest and
         *Or statement*
          */
-        List<String> lines =Files.readAllLines(Path.of("conf/movieCollectionNew.csv"));
+        List<String> lines =Files.readAllLines(Path.of("movieCollectionNew.csv"));
         List<Movie> entireDatabase = new ArrayList<>();
 
         for(String line: lines){
