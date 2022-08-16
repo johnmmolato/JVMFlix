@@ -24,6 +24,10 @@ public class Movie {
     public void play(){
         System.out.println("Playing " + getTitle() + "...");
     }
+    public void download(){
+        System.out.println("Downloading " + getTitle() + "...");
+
+    }
 
     //ACCESSOR METHODS
 

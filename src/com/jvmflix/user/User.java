@@ -59,8 +59,9 @@ public class User {
 
     }
 
-    public void download() {
-
+    public void saveOnComputer() {
+        Movie movie = getSelectedMovie();
+        movie.download();
 
     }
 
@@ -102,6 +103,7 @@ public class User {
         for(Movie movie: database){
             if(movie.getInterest() == interest || movie.getGenre() == getGenre()){
                 suggested.add(movie);
+
             }
         }
 
