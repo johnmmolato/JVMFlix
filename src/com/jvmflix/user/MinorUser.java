@@ -2,7 +2,7 @@ package com.jvmflix.user;
 
 import com.jvmflix.movie.Genre;
 
-class MinorUser extends User {
+public class MinorUser extends User {
 
     public MinorUser(String name, int age, Genre genre) {
         super(name, age, genre);
