@@ -62,6 +62,7 @@ public class JVMFlixApp implements SplashApp {
 
     private void userInputName() {
         prompter.prompt("Please enter you name: ");
+        System.out.println("");
     }
 
     private void userInputAge() {
