@@ -5,7 +5,7 @@ public class Movie {
     private int id;
     private String title;
     private Genre genre;
-    private int releaseDate;
+    private int releaseDate;// Local Date or to release year
     private Rating rating;
     private Interest interest;
 

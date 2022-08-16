@@ -3,18 +3,19 @@ package com.jvmflix.movie;
 
 import com.apps.util.Prompter;
 import com.apps.util.SplashApp;
+import com.jvmflix.user.MinorUser;
 import com.jvmflix.user.User;
 
 import javax.swing.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Scanner;
 
 public class JVMFlixApp implements SplashApp {
+    private static final int MINOR = 18;
     JFrame frame;
-    SplashApp app;
+    //SplashApp app;
     Prompter prompter = new Prompter(new Scanner(System.in));
 
     @Override
@@ -37,10 +38,15 @@ public class JVMFlixApp implements SplashApp {
     }
 
     private void listMovies(String name, int age, Genre genre) throws IOException {
-        User user = new User(name,age,genre);
+        User user = new User(name, age, genre);
+        MinorUser minorUser = new MinorUser(name, age, genre);
         List<Movie> userList = new ArrayList<>(user.videoList());
+        List<Movie> userListMinor = (List<Movie>) userList.stream().filter(movie -> !movie.getRating().equals(Rating.R));
         List<Movie> userMovies = new ArrayList<>();
-        for(Movie movie : userList){
+        for (Movie movie : userListMinor) {
+            if (userInputAge() < MINOR) {
+                userMovies.add(movie);
+            }
             userMovies.add(movie);
         }
         System.out.println(userMovies);
@@ -51,28 +57,8 @@ public class JVMFlixApp implements SplashApp {
         boolean validInput = false;
         while (!validInput) {
             String name = prompter.prompt("Please enter type of genre of a movie: ").toUpperCase();
-            if (name.matches("C|A|R|H|DR|SF|F|CF|AN|D")) {
-                if ("C".equals(name)) {
-                    genre = Genre.COMEDY;
-                } else if ("A".equals(name)) {
-                    genre = Genre.ACTION;
-                } else if ("R".equals(name)) {
-                    genre = Genre.ROMANCE;
-                } else if ("H".equals(name)) {
-                    genre = Genre.HORROR;
-                } else if ("DR".equals(name)) {
-                    genre = Genre.DRAMA;
-                } else if ("SF".equals(name)) {
-                    genre = Genre.SCIENCE_FICTION;
-                } else if ("F".equals(name)) {
-                    genre = Genre.FANTASY;
-                } else if ("CF".equals(name)) {
-                    genre = Genre.CHILDRENS_FILM;
-                } else if ("AN".equals(name)) {
-                    genre = Genre.CHILDRENS_FILM;
-                } else if ("D".equals(name)) {
-                    genre = Genre.CHILDRENS_FILM;
-                }
+            if (name.matches("C|A|R|H|DR|SF|F|CF|AN|D")) {//add selection description
+                genre = Genre.get(name);
                 validInput = true;
             } else {
                 System.out.println("Please enter valid selection");
@@ -86,21 +72,8 @@ public class JVMFlixApp implements SplashApp {
     }
 
     private int userInputAge() {
-       String result = prompter.prompt("Please enter your age: ", "\\d+", "\nPlease enter a valid age!\n");
-        int ageResult = Integer.parseInt(result);
+        String result = prompter.prompt("Please enter your age: ", "\\d+", "\nPlease enter a valid age!\n");//empty string for no error text
+        int ageResult = Integer.parseInt(result);// add restriction
         return ageResult;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        JVMFlixApp app1 = (JVMFlixApp) o;
-        return Objects.equals(app, app1.app) && Objects.equals(prompter, app1.prompter);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(app, prompter);
     }
 }

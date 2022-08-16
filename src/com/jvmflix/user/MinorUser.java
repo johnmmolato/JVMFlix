@@ -15,13 +15,13 @@ public class MinorUser extends User {
         super(name, age, genre);
     }
 
-
+    @Override
     public List<Movie> suggestedList(Interest interest) throws IOException {
         List<Movie> suggested = new ArrayList<>();
         List<Movie> database = videoList();
 
-        for(Movie movie: database){
-            if((movie.getInterest() == interest || movie.getGenre() == getGenre()) && movie.getRating() != Rating.R){
+        for (Movie movie : database) {
+            if ((movie.getInterest() == interest || movie.getGenre() == getGenre()) && movie.getRating() != Rating.R) {
                 suggested.add(movie);
             }
         }
