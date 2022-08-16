@@ -6,7 +6,7 @@ import com.jvmflix.movie.Interest;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-class UserClient {
+public class UserClient {
     public static void main(String[] args) {
 
         User user1 = new User("Miggie", 21, Genre.HORROR);
