@@ -12,6 +12,9 @@ public class UserClient {
         User user1 = new User("Miggie", 21, Genre.HORROR);
         try {
             System.out.println(user1.suggestedList(Interest.ANIMALS));
+            System.out.println(user1.toSelect("Dumb & Dumber"));
+            user1.watch();
+
         } catch (IOException e) {
             e.printStackTrace();
         }

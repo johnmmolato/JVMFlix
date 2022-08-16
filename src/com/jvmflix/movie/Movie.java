@@ -19,6 +19,11 @@ public class Movie {
         setRating(rating);
        setInterest(interest);
     }
+    //BUSINESS METHODS
+
+    public void play(){
+        System.out.println("Playing " + getTitle() + "...");
+    }
 
     //ACCESSOR METHODS
 

@@ -5,7 +5,9 @@ import com.jvmflix.movie.Interest;
 import com.jvmflix.movie.Movie;
 import com.jvmflix.movie.Rating;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -19,6 +21,8 @@ public class User {
     private String name;
     private int age;
     private Genre genre;
+    private Interest interest;
+    private Movie selectedMovie;
 
     //CONSTRUCTORS
 
@@ -30,81 +34,33 @@ public class User {
     }
 
     //BUSINESS METH0DS
-    public void toSelect() {
+    public Movie toSelect( String title) throws IOException {
+        List<Movie> selectedMovie = new ArrayList<>();
 
+        List<Movie> suggestedMovies = suggestedList(getInterest());
+        for(Movie movie:suggestedMovies){
+            if(title.equals(movie.getTitle())){
+            selectedMovie.add(movie);
+            }
+        }
+        setSelectedMovie(selectedMovie.get(0));
+
+        return selectedMovie.get(0);
     }
 
     public void watch() {
+        Movie movie = getSelectedMovie();
+        movie.play();
+
 
     }
-//this section was worked on by Miggie but commented out to not disturb the original code during the commit process
-    /*
-     * Psuedo Code:
-     * user picks a movie they want to "save for later"
-     * movie has the properties: title, rating, genre, interest
-     * user property: name and age
-     * add movie to list on the text file 'watchlist.txt' (this is already created)
-     * continue to add movie item to list
-     * be able to access this list from file whenever the user wants to
-     */
 
-    /*
-    public static void main(String[] args) throws IOException {
+    public void saveForLater() {
 
-        String[] movies = {"Movies1", "Movie2", "Movie3"}; //need to change to enums
-        try {
-            // file is only created first time this is ran
-            BufferedWriter writer = new BufferedWriter(new FileWriter("watchlist.txt"));
-            // testing out text for file
-            writer.write("This is Movie1:  Genre:, Title: , Rating: ");
-            //everytime you add something to file, it is overwritten to add this data
-            writer.write("\nThis is Movie2. Genre:, Title: , Rating: (new line).");
-            writer.write("\nThis is Movie3. Genre:, Title: , Rating: (new line).");
-
-
-            for (String movie : movies) { //returns the string
-                writer.write("\n" + movie); //writes string in external file and \n puts on sep. lines
-            }
-            writer.close(); //needs to be included for file to actually be made
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-// need to pull in enums of genre and interest based on user wanting to use later
-// return an option of save for later list incase user doesnt save anything for later
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader("watchlist.txt"));
-            String line;
-            // this while loop reads each line of text until the end of the line,
-            // that the signifcance of =null
-            while((line = reader.readLine()) !=null) {
-                System.out.println(line); // prints line by line
-            }
-            //  System.out.println(reader.readLine()); //prints to the console
-            reader.close(); //closer the reader object
-        } catch (IOException e){
-            e.printStackTrace();
-        }
     }
-
-    /*
-     *This is the save for later list based on what the user inputs from reccomended list
-     * BufferedReading is going to read list from the watchlist text file,
-     */
-    //  public void List<Movie> saveForLater( ) throws IOException{
-
- //       List<String> lines = Files.readAllLines(Path.of("watchlist.txt"));
- //       List<Movie> watchList = new ArrayList<>();
-
- //       for(String line: lines){
-
-//          Movie line = new Movie(genre);
-  //          watchList.add(line);
-  //      }
- //       return watchList;
- //   }
-
 
     public void download() {
+
 
     }
 
@@ -114,11 +70,14 @@ public class User {
         Scanner is going to read the list of movies text file, filtering by interest and
         *Or statement*
          */
-        List<String> lines =Files.readAllLines(Path.of("conf/moviesListDemo.csv"));
+        List<String> lines =Files.readAllLines(Path.of("conf/movieCollectionNew.csv"));
         List<Movie> entireDatabase = new ArrayList<>();
 
         for(String line: lines){
+
             String [] properties = line.split(",");
+
+
             int id = Integer.parseInt(properties[0]);
             String title = properties[1];
             Genre genre = Genre.valueOf(properties[2]);
@@ -145,6 +104,8 @@ public class User {
                 suggested.add(movie);
             }
         }
+
+        setInterest(interest);
 
         return suggested;
     }
@@ -173,6 +134,22 @@ public class User {
 
     public void setGenre(Genre genre) {
         this.genre = genre;
+    }
+
+    public Interest getInterest() {
+        return interest;
+    }
+
+    public void setInterest(Interest interest) {
+        this.interest = interest;
+    }
+
+    public Movie getSelectedMovie() {
+        return selectedMovie;
+    }
+
+    public void setSelectedMovie(Movie selectedMovie) {
+        this.selectedMovie = selectedMovie;
     }
 
     @Override
