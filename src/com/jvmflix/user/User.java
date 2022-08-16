@@ -60,44 +60,6 @@ public class User {
 
 
     }
-/*
-    public void saveForLater() {
-
-    }
-
-    String[] names = {"Movie1(placeholder)", "Movie2(placeholder)", "Movie3(placeholder)"};
-    try {
-                // file is only created first time this is ran
-                BufferedWriter writer = new BufferedWriter(new FileWriter("data/watchlist.txt"));
-                // testing out text for file
-                writer.write("is this going to work?");
-                //everytime you add something to file, it is overwritten to add this data
-                writer.write("\ni hope it does (new line).");
-                writer.write("\ntesting");
-
-                for (String movieTitles : selectedMovie) { //returns the string
-                    writer.write("\n" + movieTitles); //writes string in external file and \n puts on sep. lines
-                }
-                writer.close(); //needs to be included for file to actually be made
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            try {
-                BufferedReader reader = new BufferedReader(new FileReader("data/watchlist.txt"));
-                String line;
-                // this while loop reads each line of text until the end of the line,
-                // that the signifcance of =null
-                while((line = reader.readLine()) !=null) {
-                    System.out.println(line);
-                }
-                //  System.out.println(reader.readLine()); //prints to the console
-                reader.close(); //closer the reader object
-            } catch (IOException e){
-                e.printStackTrace();
-            }
-*/
-    public void download() {
-
 
     }
 
@@ -139,6 +101,7 @@ public class User {
         for(Movie movie: database){
             if(movie.getInterest() == interest || movie.getGenre() == getGenre()){
                 suggested.add(movie);
+
             }
         }
 

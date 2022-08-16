@@ -1,10 +1,33 @@
 package com.jvmflix.user;
 
 import com.jvmflix.movie.Genre;
+import com.jvmflix.movie.Interest;
+import com.jvmflix.movie.Movie;
+import com.jvmflix.movie.Rating;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MinorUser extends User {
 
     public MinorUser(String name, int age, Genre genre) {
         super(name, age, genre);
+    }
+
+
+    public List<Movie> suggestedList(Interest interest) throws IOException {
+        List<Movie> suggested = new ArrayList<>();
+        List<Movie> database = videoList();
+
+        for(Movie movie: database){
+            if((movie.getInterest() == interest || movie.getGenre() == getGenre()) && movie.getRating() != Rating.R){
+                suggested.add(movie);
+            }
+        }
+
+        setInterest(interest);
+
+        return suggested;
     }
 }
