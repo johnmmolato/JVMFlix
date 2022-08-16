@@ -21,6 +21,8 @@ public class User {
     private String name;
     private int age;
     private Genre genre;
+    private Interest interest;
+    private Movie selectedMovie;
 
     //CONSTRUCTORS
 
@@ -32,11 +34,24 @@ public class User {
     }
 
     //BUSINESS METH0DS
-    public void toSelect() {
+    public Movie toSelect( String title) throws IOException {
+        List<Movie> selectedMovie = new ArrayList<>();
 
+        List<Movie> suggestedMovies = suggestedList(getInterest());
+        for(Movie movie:suggestedMovies){
+            if(title.equals(movie.getTitle())){
+            selectedMovie.add(movie);
+            }
+        }
+        setSelectedMovie(selectedMovie.get(0));
+
+        return selectedMovie.get(0);
     }
 
     public void watch() {
+        Movie movie = getSelectedMovie();
+        movie.play();
+
 
     }
 
@@ -46,6 +61,7 @@ public class User {
 
     public void download() {
 
+
     }
 
     public List<Movie> videoList( ) throws IOException {
@@ -54,7 +70,7 @@ public class User {
         Scanner is going to read the list of movies text file, filtering by interest and
         *Or statement*
          */
-        List<String> lines =Files.readAllLines(Path.of("conf/moviesListDemo.csv"));
+        List<String> lines =Files.readAllLines(Path.of("conf/movieCollectionNew.csv"));
         List<Movie> entireDatabase = new ArrayList<>();
 
         for(String line: lines){
@@ -89,6 +105,8 @@ public class User {
             }
         }
 
+        setInterest(interest);
+
         return suggested;
     }
 
@@ -116,6 +134,22 @@ public class User {
 
     public void setGenre(Genre genre) {
         this.genre = genre;
+    }
+
+    public Interest getInterest() {
+        return interest;
+    }
+
+    public void setInterest(Interest interest) {
+        this.interest = interest;
+    }
+
+    public Movie getSelectedMovie() {
+        return selectedMovie;
+    }
+
+    public void setSelectedMovie(Movie selectedMovie) {
+        this.selectedMovie = selectedMovie;
     }
 
     @Override
