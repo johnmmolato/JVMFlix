@@ -61,7 +61,12 @@ public class User {
 
     }
 
+    public void saveOnComputer (){
+       Movie movie = getSelectedMovie();
+       movie.download();
     }
+
+
 
     public List<Movie> videoList( ) throws IOException {
 
