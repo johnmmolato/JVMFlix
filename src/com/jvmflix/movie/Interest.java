@@ -26,6 +26,7 @@ public enum Interest {
             case "S":
                 result = SPORTS;
                 break;
-        }return result;
+        }
+        return result;
     }
 }
