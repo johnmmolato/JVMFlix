@@ -17,12 +17,10 @@ public class JVMFlixApp implements SplashApp {
     private static final int MINIMUM_AGE = 1;
     private static final int MAXIMUM_AGE = 115;
     JFrame frame;
-    //SplashApp app;
     Prompter prompter = new Prompter(new Scanner(System.in));
 
     @Override
     public void start() {
-        //app.welcome("JVMFlix.jpeg");
         try {
             initialize();
         } catch (IOException e) {
@@ -31,12 +29,37 @@ public class JVMFlixApp implements SplashApp {
     }
 
     private void initialize() throws IOException {
-        //welcome("JVMFlix.jpeg");
         String name = userInputName();
         int age = userInputAge();
         Genre genre = userInputGenre();
         listMovies(name, age, genre);
+        userInputInterest();
+        listMovieInterest();
+    }
 
+    private void listMovieInterest() throws IOException {
+        User user = UserFactory.createUser(userInputName(), userInputAge(), userInputGenre());
+        List<Movie> movieInterest = user.suggestedList(userInputInterest());
+
+        for(Movie movie : movieInterest){
+            System.out.println(movie);
+        }
+    }
+
+    private Interest userInputInterest() {
+        Interest interest = null;
+        boolean validInput = false;
+        while (!validInput) {
+            String input = prompter.prompt("Please provide select your interest: \n" +
+                    "[N]-NATURE, [L]-LOVE, [F]-FOOD, [A] ANIMALS, [S]-SPORTS. ").toUpperCase();
+            if (input.matches("N|L|F|A|S")) {
+                interest = Interest.getInterest(input);
+                validInput = true;
+            } else {
+                System.out.println("Please enter a valid selection");
+            }
+        }
+        return interest;
     }
 
     private void listMovies(String name, int age, Genre genre) throws IOException {
