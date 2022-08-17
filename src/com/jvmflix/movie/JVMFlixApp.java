@@ -3,9 +3,12 @@ package com.jvmflix.movie;
 
 import com.apps.util.Prompter;
 import com.apps.util.SplashApp;
+import com.jvmflix.user.User;
+import com.jvmflix.user.UserFactory;
 
 import javax.swing.*;
 import java.io.IOException;
+import java.util.List;
 import java.util.Scanner;
 
 public class JVMFlixApp implements SplashApp {
@@ -36,18 +39,12 @@ public class JVMFlixApp implements SplashApp {
     }
 
     private void listMovies(String name, int age, Genre genre) throws IOException {
-//        User user = new User(name, age, genre);
-//        MinorUser minorUser = new MinorUser(name, age, genre);
-//        List<Movie> userList = new ArrayList<>(user.videoList());
-//        //List<Movie> userListMinor = (List<Movie>) userList.stream().filter(movie -> !movie.getRating().equals(Rating.R));
-//        List<Movie> userMovies = new ArrayList<>();
-//        for (Movie movie : userList) {
-//            if (userInputAge() < MINOR) {
-//                userMovies.add(movie);
-//            }
-//            userMovies.add(movie);
-//        }
-//        System.out.println(userMovies);
+        User user = UserFactory.createUser(name, age, genre);
+        List<Movie> userList = user.videoList();
+
+        for (Movie movie : userList) {
+            System.out.println(movie);
+        }
     }
 
     private Genre userInputGenre() {
@@ -75,11 +72,12 @@ public class JVMFlixApp implements SplashApp {
     private int userInputAge() {
         int ageResult = 0;
         boolean validInput = false;
-        while(!validInput){
+        while (!validInput) {
             String result = prompter.prompt("Please enter your age: ", "\\d+", "");
-            if(Integer.parseInt(result) >= MINIMUM_AGE && Integer.parseInt(result) <= MAXIMUM_AGE) {
+            if (Integer.parseInt(result) >= MINIMUM_AGE && Integer.parseInt(result) <= MAXIMUM_AGE) {
                 validInput = true;
             }
-        }return ageResult;
+        }
+        return ageResult;
     }
 }
