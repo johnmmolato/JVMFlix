@@ -113,7 +113,7 @@ public class User {
             return suggested;
         }
 
-    //Saved For later List (bytecode format (.)dat file??
+    /*Saved For later List (bytecode format (.)dat file??
     public static class SavedForLater {
 
         public static SavedForLater getInstance() {
@@ -130,7 +130,7 @@ public class User {
             }
             return savedForLater;
         }
-    }
+    } */
 
 
 
@@ -173,10 +173,6 @@ public class User {
 
         public void setSelectedMovie (Movie selectedMovie){
             this.selectedMovie = selectedMovie;
-        }
-
-        public void getSavedForLater (SavedForLater){
-            getSavedForLater();
         }
 
         @Override
