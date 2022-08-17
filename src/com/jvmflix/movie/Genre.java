@@ -26,20 +26,28 @@ public enum Genre {
                 break;
             case "R":
                 result = ROMANCE;
+                break;
             case "H":
                 result = HORROR;
+                break;
             case "DR":
                 result = DRAMA;
+                break;
             case "SF":
                 result = SCIENCE_FICTION;
+                break;
             case "F":
                 result = FANTASY;
+                break;
             case "CF":
                 result = CHILDRENS_FILM;
+                break;
             case "AN":
                 result = ANIMATION;
+                break;
             case "D":
                 result = DOCUMENTARY;
+                break;
         }
         return result;
     }
