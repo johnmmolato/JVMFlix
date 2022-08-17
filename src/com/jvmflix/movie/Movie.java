@@ -17,14 +17,15 @@ public class Movie {
         setGenre(genre);
         setDate(releaseDate);
         setRating(rating);
-       setInterest(interest);
+        setInterest(interest);
     }
     //BUSINESS METHODS
 
-    public void play(){
+    public void play() {
         System.out.println("Playing " + getTitle() + "...");
     }
-    public void download(){
+
+    public void download() {
         System.out.println("Downloading " + getTitle() + "...");
 
     }
@@ -83,7 +84,7 @@ public class Movie {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return (String.format("%s: id=%s, title=%s, genre=%s, release date=%s, rating=%s, interest=%s",
                 getClass().getSimpleName(), getId(), getTitle(), getGenre(), getReleaseDate(), getRating(), getInterest()));
     }
