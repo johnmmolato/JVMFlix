@@ -19,7 +19,7 @@ public class SavedForLater implements Serializable {//serialization or serialisa
 	public static SavedForLater getInstance() {
 		SavedForLater savedForLater = null;
 		if (Files.exists(Path.of("data/savedForLater.dat"))) {
-			try (OjectInputStream in = new OjectInputStream(new FileInputStream("data/savedForLater.dat"))) {
+			try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("data/savedForLater.dat"))) {
 				savedForLater = (SavedForLater) in.readObject();
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -30,10 +30,10 @@ public class SavedForLater implements Serializable {//serialization or serialisa
 
 	//fields
 	private final Map<Integer,String> nameMap = loadNameMap();
-	private final Map<String, Movie> movieMap = new TreeMap<String, Movie>();
+	private final Map<String, List<Movie>> movieMap = new TreeMap<String, List<Movie>>();
 
-	private Map loadNameMap() {
-	}
+	//private Map loadNameMap() {
+	//}
 
 
 
@@ -43,6 +43,9 @@ public class SavedForLater implements Serializable {//serialization or serialisa
 	}
 
 	// method
+	// what is this method doing??
+	// there is not a way to specify who the map is for in terms of which user
+
 	public void display() {
 		if (movieMap.isEmpty()){
 			System.out.println("Have you selected a movie to add?");
@@ -58,11 +61,12 @@ public class SavedForLater implements Serializable {//serialization or serialisa
 	public void update(String user, List title){
 		Movie movie = null;
 		if (movieMap.containsValue(user)) {
+			movieMap.put(user,movie.); //where is file being added?
 		} else {
 			Movie movies = new Movie (user, nameMap.get(user));
 			movieMap.put(user, movie);
 		}
-		assert movie != null;
+	//	assert movie != null;
 		movie.new(title);
 		save();
 	}
@@ -77,15 +81,15 @@ public class SavedForLater implements Serializable {//serialization or serialisa
 	 }
 	}
 
-	private Map<Integer, String> loadMovieMap() {
+	private Map<Integer, String> loadNameMap() {
 		Map<Integer, String> idMap = new HashMap<>();
 
 		try {
 			List<String> lines = Files.readAllLines(Path.of("conf/movieCollectionNew.csv"));
 			for (String line : lines) {
-				String[] tokens = line.split(",");
-				Integer id = Integer.valueOf(tokens[0]);
-				String title = tokens[1];
+				String[] properpties = line.split(",");
+				Integer id = Integer.valueOf(properpties[0]);
+				String title = properpties[1];
 				idMap.put(id, title);
 			}
 		}
@@ -96,6 +100,7 @@ public class SavedForLater implements Serializable {//serialization or serialisa
 	}
 
 }
+
 	/*
 
 	public static void main(String[] args) throws IOException {
