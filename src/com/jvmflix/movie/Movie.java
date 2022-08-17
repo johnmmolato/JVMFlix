@@ -1,5 +1,7 @@
 package com.jvmflix.movie;
 
+import javax.swing.*;
+
 public class Movie {
 
     private int id;
@@ -23,10 +25,26 @@ public class Movie {
 
     public void play() {
         System.out.println("Playing " + getTitle() + "...");
+        getVideo();
     }
 
     public void download() {
         System.out.println("Downloading " + getTitle() + "...");
+
+    }
+
+    public void getVideo(){
+        String displayMessage = "Playing " + getTitle() + "...";
+        JFrame frame = new JFrame(displayMessage);
+
+        frame.setSize(500, 400);
+        frame.setResizable(false);
+        ImageIcon icon = new ImageIcon("images/Screen.png");
+        //JOptionPane.showMessageDialog(null, icon, "Playing...", JOptionPane.INFORMATION_MESSAGE);
+        frame.add(new JLabel(icon));
+        frame.pack();
+        frame.setResizable(false);
+        frame.setVisible(true);
 
     }
 

@@ -21,12 +21,9 @@ public class UserClient {
             factoryList1 = factoryUser1.suggestedList(Interest.FOOD);
             System.out.println(factoryUser1.videoList());
 
+            factoryUser1.toSelect("The Amazing Spiderman");
+            factoryUser1.watch();
 
-
-            System.out.println();
-            User factoryUser2 = UserFactory.createUser("Woodley", 34, Genre.ACTION);
-            List<Movie> factoryList2 = factoryUser2.suggestedList(Interest.LOVE);
-            System.out.println(factoryUser2.videoList());
 
 
         } catch (IOException e) {
