@@ -6,6 +6,7 @@ import com.jvmflix.movie.Movie;
 import com.jvmflix.movie.Rating;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -15,7 +16,7 @@ import java.io.ObjectInputStream;
 
 
 
-public class User {
+public class User implements Serializable {
 
 
     //PROPERTIES
@@ -24,7 +25,7 @@ public class User {
     private Genre genre;
     private Interest interest;
     private Movie selectedMovie;
-    private Object SavedForLater;
+    private List<Movie> savedForLaterMovies = new ArrayList<>();
 
     //CONSTRUCTORS
     public User(String name, int age, Genre genre) {
@@ -58,6 +59,10 @@ public class User {
         movie.play();
     }
 
+    public void savedForLater(Movie movie){
+        getSavedForLaterMovies().add(movie);
+
+    }
 
 
         public void saveOnComputer() {
@@ -113,25 +118,6 @@ public class User {
             return suggested;
         }
 
-    /*Saved For later List (bytecode format (.)dat file??
-    public static class SavedForLater {
-
-        public static SavedForLater getInstance() {
-            SavedForLater savedForLater = null;
-
-            if (Files.exists(Path.of("data/savedForLater.dat"))) {
-                try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("data/savedForLater.dat"))) {
-                    savedForLater = (SavedForLater) in.readObject();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            } else {
-                savedForLater = new SavedForLater();
-            }
-            return savedForLater;
-        }
-    } */
-
 
 
         //ACCESSOR METHODS
@@ -175,7 +161,15 @@ public class User {
             this.selectedMovie = selectedMovie;
         }
 
-        @Override
+    public List<Movie> getSavedForLaterMovies() {
+        return savedForLaterMovies;
+    }
+
+    public void setSavedForLaterMovies(List<Movie> savedForLaterMovies) {
+        this.savedForLaterMovies = savedForLaterMovies;
+    }
+
+    @Override
         public String toString() {
             return String.format("%s: name=%s, age=%s, genre=%s",
                     getClass().getSimpleName(), getName(), getAge(), getGenre());
