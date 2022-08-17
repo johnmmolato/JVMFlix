@@ -15,9 +15,11 @@ public class JVMFlixApp implements SplashApp {
     private static final int MINIMUM_AGE = 1;
     private static final int MAXIMUM_AGE = 115;
     private int age;
+    private String select;
     private String name;
     private Genre genre;
     private Interest interest;
+
     Prompter prompter = new Prompter(new Scanner(System.in));
 
     @Override
@@ -36,11 +38,37 @@ public class JVMFlixApp implements SplashApp {
         listMovies(getName(), getAge(), getGenre());
         setInterest(userInputInterest());
         listMovieInterest();
+        setSelect(userInputSelect());
+        selectedMovie();
+
     }
+
+    private void selectedMovie() throws IOException {
+        String input = getSelect();
+        User user = UserFactory.createUser(getName(),getAge(),getGenre());
+        List<Movie> suggested = user.suggestedList(getInterest());
+        int id = Integer.parseInt(input);
+        for (Movie movie : suggested){
+            if(movie.getId() == id){
+                System.out.println(movie);
+            }
+        }
+/*
+        user.toSelect(input);
+        System.out.println(user.getSelectedMovie());
+        user.watch();
+ */
+
+    }
+
+    private String userInputSelect() {
+        return prompter.prompt("Please select a movie by id number: ");
+    }
+
     private void listMovieInterest() throws IOException {
         User user = UserFactory.createUser(getName(), getAge(), getGenre());
         List<Movie> movieInterest = user.suggestedList(getInterest());
-        for(Movie movie : movieInterest){
+        for (Movie movie : movieInterest) {
             System.out.println(movie);
         }
     }
@@ -61,7 +89,7 @@ public class JVMFlixApp implements SplashApp {
         return interest;
     }
 
-    private List<Movie> listMovies(String name,int age,Genre genre) throws IOException {
+    private List<Movie> listMovies(String name, int age, Genre genre) throws IOException {
         User user = UserFactory.createUser(name, age, genre);
         List<Movie> userList = user.videoList();
 
@@ -106,35 +134,43 @@ public class JVMFlixApp implements SplashApp {
         return ageResult;
     }
 
-    public int getAge() {
+    private int getAge() {
         return age;
     }
 
-    public String getName() {
+    private String getName() {
         return name;
     }
 
-    public Genre getGenre() {
+    private Genre getGenre() {
         return genre;
     }
 
-    public Interest getInterest() {
+    private Interest getInterest() {
         return interest;
     }
 
-    public void setAge(int age) {
+    private String getSelect() {
+        return select;
+    }
+
+    private void setSelect(String select) {
+        this.select = select;
+    }
+
+    private void setAge(int age) {
         this.age = age;
     }
 
-    public void setName(String name) {
+    private void setName(String name) {
         this.name = name;
     }
 
-    public void setGenre(Genre genre) {
+    private void setGenre(Genre genre) {
         this.genre = genre;
     }
 
-    public void setInterest(Interest interest) {
+    private void setInterest(Interest interest) {
         this.interest = interest;
     }
 }
