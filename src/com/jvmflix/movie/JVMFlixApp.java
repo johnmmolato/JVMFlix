@@ -7,7 +7,8 @@ import com.jvmflix.user.User;
 import com.jvmflix.user.UserFactory;
 
 import javax.swing.*;
-import java.io.IOException;
+import java.io.*;
+import java.nio.file.*;
 import java.util.List;
 import java.util.Scanner;
 
@@ -80,4 +81,5 @@ public class JVMFlixApp implements SplashApp {
         }
         return ageResult;
     }
+
 }

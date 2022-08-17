@@ -21,7 +21,11 @@ public class Movie {
         setRating(rating);
         setInterest(interest);
     }
-    //BUSINESS METHODS
+
+    public Movie(String users, String titles) {
+
+    }
+	//BUSINESS METHODS
 
     public void play() {
         System.out.println("Playing " + getTitle() + "...");

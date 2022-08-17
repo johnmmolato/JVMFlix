@@ -1,14 +1,107 @@
 package com.jvmflix.movie;
 
+
 import java.io.*;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
+import java.nio.file.Files;
+
+
+import java.util.*;
+import java.nio.file.Path;
+
 import java.io.IOException;
 
+// user selected movie to save for later
+// file gets updated
+// show the user
 
-class SavedForLater {
+public class SavedForLater implements Serializable {//serialization or serialisation is the process of translating a data structure or object state into a format that can be stored or transmitted and reconstructed later.
+
+	public static SavedForLater getInstance() {
+		SavedForLater savedForLater = null;
+		if (Files.exists(Path.of("data/savedForLater.dat"))) {
+			try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("data/savedForLater.dat"))) {
+				savedForLater = (SavedForLater) in.readObject();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else savedForLater = new SavedForLater();
+		return savedForLater;
+	}
+
+	//fields
+	private final Map<Integer,String> nameMap = loadNameMap();
+	private final Map<String, List<Movie>> movieMap = new TreeMap<String, List<Movie>>();
+
+	//private Map loadNameMap() {
+	//}
+
+
+
+	//const
+	private SavedForLater() {
+
+	}
+
+	// method
+	// what is this method doing??
+	// there is not a way to specify who the map is for in terms of which user
+
+	public void display() {
+		if (movieMap.isEmpty()){
+			System.out.println("Have you selected a movie to add?");
+		} else
+			System.out.println(" ");
+			Collection<Movie> movies = movieMap.values();
+			for (Movie movie : movies) {
+				System.out.println(movie);
+			}
+		}
+
+
+	public void update(String user, List title){
+		Movie movie = null;
+		if (movieMap.containsValue(user)) {
+			movieMap.put(user,movie.); //where is file being added?
+		} else {
+			Movie movies = new Movie (user, nameMap.get(user));
+			movieMap.put(user, movie);
+		}
+	//	assert movie != null;
+		movie.new(title);
+		save();
+	}
+
+
+	private void save(){
+	try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("data/savedForLater.dat"))) {
+		out.writeObject(this); //this passes the ref to yourself
+	}
+	catch (Exception e){
+		e.printStackTrace();
+	 }
+	}
+
+	private Map<Integer, String> loadNameMap() {
+		Map<Integer, String> idMap = new HashMap<>();
+
+		try {
+			List<String> lines = Files.readAllLines(Path.of("conf/movieCollectionNew.csv"));
+			for (String line : lines) {
+				String[] properpties = line.split(",");
+				Integer id = Integer.valueOf(properpties[0]);
+				String title = properpties[1];
+				idMap.put(id, title);
+			}
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+		return idMap;
+	}
+
+}
+
+	/*
 
 	public static void main(String[] args) throws IOException {
 
@@ -43,4 +136,5 @@ class SavedForLater {
 			e.printStackTrace();
 		}
 	}
-}
+
+	 */
