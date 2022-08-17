@@ -19,15 +19,15 @@ public class UserClient {
         List<Movie> factoryList1 = null;
 
             factoryList1 = factoryUser1.suggestedList(Interest.FOOD);
-        for(Movie movie: factoryList1){
-                System.out.println(movie);
-            }
+            System.out.println(factoryUser1.videoList());
+
+
+
             System.out.println();
             User factoryUser2 = UserFactory.createUser("Woodley", 34, Genre.ACTION);
             List<Movie> factoryList2 = factoryUser2.suggestedList(Interest.LOVE);
-            for(Movie movie: factoryList2){
-                System.out.println(movie);
-            }
+            System.out.println(factoryUser2.videoList());
+
 
         } catch (IOException e) {
             e.printStackTrace();

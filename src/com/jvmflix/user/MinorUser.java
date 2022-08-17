@@ -30,4 +30,17 @@ public class MinorUser extends User {
 
         return suggested;
     }
+
+    @Override
+    public List<Movie> videoList() throws IOException{
+        List<Movie> minorList = new ArrayList<>();
+        List<Movie> regularList = super.videoList();
+        for (Movie movie: regularList){
+            if(movie.getRating() != Rating.R){
+                minorList.add(movie);
+            }
+        }
+
+        return minorList;
+    }
 }
