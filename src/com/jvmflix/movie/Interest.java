@@ -5,5 +5,27 @@ public enum Interest {
     LOVE,
     FOOD,
     ANIMALS,
-    SPORTS
+    SPORTS;
+
+    public static Interest getInterest(String interest){
+
+        Interest result = null;
+        switch (interest){
+            case "N":
+                result = NATURE;
+                break;
+            case "L":
+                result = LOVE;
+                break;
+            case "F":
+                result = FOOD;
+                break;
+            case "A":
+                result = ANIMALS;
+                break;
+            case "S":
+                result = SPORTS;
+                break;
+        }return result;
+    }
 }
