@@ -11,28 +11,27 @@ import java.util.List;
 public class UserClient {
     public static void main(String[] args) {
 
-        User user1 = new User("Miggie", 21, Genre.HORROR);
-        MinorUser user2 = new MinorUser("Vanessa", 17, Genre.HORROR);
+
+            // Testing factory
         try {
-            List<Movie> movieListResult1 = user1.suggestedList(Interest.ANIMALS);
-            for(Movie movie: movieListResult1){
+            System.out.println("Testing the factory method");
+            User factoryUser1 = UserFactory.createUser("Vanessa", 17, Genre.COMEDY);
+        List<Movie> factoryList1 = null;
+
+            factoryList1 = factoryUser1.suggestedList(Interest.FOOD);
+        for(Movie movie: factoryList1){
                 System.out.println(movie);
             }
-            System.out.println(user1.toSelect("Dumb & Dumber"));
-            user1.watch();
             System.out.println();
-
-            List<Movie> movieListResult2 = user2.suggestedList(Interest.ANIMALS);
-            for(Movie movie: movieListResult2){
+            User factoryUser2 = UserFactory.createUser("Woodley", 34, Genre.ACTION);
+            List<Movie> factoryList2 = factoryUser2.suggestedList(Interest.LOVE);
+            for(Movie movie: factoryList2){
                 System.out.println(movie);
             }
-
 
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
 
     }
 }
