@@ -68,10 +68,13 @@ public class UserAccount implements Serializable {
             Collection<User> users = savedForLaterMap.values();
 
             for(User user: users){
-                System.out.println(user.getName()
-                        + " " + user.getSavedForLaterMovies());
+                System.out.println(user.getName() + "' watchlist");
+                for(Movie movie: user.getSavedForLaterMovies()) {
+                    System.out.println(movie);
+
             }
         }
     }
 
+}
 }
