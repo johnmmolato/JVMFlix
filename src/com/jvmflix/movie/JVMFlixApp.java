@@ -1,8 +1,6 @@
 package com.jvmflix.movie;
 
-
 import com.apps.util.Prompter;
-import com.apps.util.SplashApp;
 import com.jvmflix.user.User;
 import com.jvmflix.user.UserFactory;
 
@@ -10,7 +8,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
-public class JVMFlixApp implements SplashApp {
+public class JVMFlixApp{
     private static final int MINOR = 18;
     private static final int MINIMUM_AGE = 1;
     private static final int MAXIMUM_AGE = 115;
@@ -23,16 +21,7 @@ public class JVMFlixApp implements SplashApp {
 
     Prompter prompter = new Prompter(new Scanner(System.in));
 
-    @Override
-    public void start() {
-        try {
-            initialize();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void initialize() throws IOException {
+    public void initialize() throws IOException {
         setName(userInputName());
         setAge(userInputAge());
         setGenre(userInputGenre());
