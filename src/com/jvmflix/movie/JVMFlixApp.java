@@ -17,6 +17,7 @@ public class JVMFlixApp implements SplashApp {
     private int age;
     private String select;
     private String name;
+    private Movie option;
     private Genre genre;
     private Interest interest;
 
@@ -39,26 +40,50 @@ public class JVMFlixApp implements SplashApp {
         setInterest(userInputInterest());
         listMovieInterest();
         setSelect(userInputSelect());
-        selectedMovie();
+        setOption(selectedMovie());
+        options();
 
     }
 
-    private void selectedMovie() throws IOException {
+    private void options() throws IOException {
+        User user = UserFactory.createUser(getName(),getAge(),getGenre());
+        boolean validOption = false;
+        Movie selectedMovie = getOption();
+
+        while(!validOption){
+            String option = prompter.prompt("Good choice! Please select from the following options\n" +
+                    "[1] - to watch\n[2] - to download\n[3] - to save to watch for later\n" +
+                    "[4] - to exit\n");
+            int choice = Integer.parseInt(option);
+            switch (choice) {
+                case 1:
+                    user.watch();
+                    break;
+                case 2:
+                    user.saveOnComputer();
+                    break;
+                case 3:
+                    System.out.println("Saving for later");
+                    break;
+                case 4:
+                    System.out.println("Good Bye!");
+
+            }validOption = true;
+        }
+    }
+
+    private Movie selectedMovie() throws IOException {
         String input = getSelect();
+        Movie selected = null;
         User user = UserFactory.createUser(getName(),getAge(),getGenre());
         List<Movie> suggested = user.suggestedList(getInterest());
         int id = Integer.parseInt(input);
         for (Movie movie : suggested){
             if(movie.getId() == id){
                 System.out.println(movie);
+                selected = movie;
             }
-        }
-/*
-        user.toSelect(input);
-        System.out.println(user.getSelectedMovie());
-        user.watch();
- */
-
+        }return selected;
     }
 
     private String userInputSelect() {
@@ -89,14 +114,13 @@ public class JVMFlixApp implements SplashApp {
         return interest;
     }
 
-    private List<Movie> listMovies(String name, int age, Genre genre) throws IOException {
+    private void listMovies(String name, int age, Genre genre) throws IOException {
         User user = UserFactory.createUser(name, age, genre);
         List<Movie> userList = user.videoList();
 
         for (Movie movie : userList) {
             System.out.println(movie);
         }
-        return userList;
     }
 
     private Genre userInputGenre() {
@@ -152,6 +176,14 @@ public class JVMFlixApp implements SplashApp {
 
     private String getSelect() {
         return select;
+    }
+
+    public Movie getOption() {
+        return option;
+    }
+
+    public void setOption(Movie option) {
+        this.option = option;
     }
 
     private void setSelect(String select) {
