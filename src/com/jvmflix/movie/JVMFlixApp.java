@@ -49,19 +49,24 @@ public class JVMFlixApp{
             int choice = Integer.parseInt(option);
             switch (choice) {
                 case 1:
+                    Console.clear();
                     user.watch();
                     break;
                 case 2:
+                    Console.clear();
                     user.saveOnComputer();
                     break;
                 case 3:
+                    Console.clear();
                     System.out.println("Saving for later");
                     account.watchList(user,getOption());
                     break;
                 case 4:
+                    Console.clear();
                     account.show();
                     break;
                 case 5:
+                    Console.clear();
                     System.out.println("Good Bye!");
                     optionSelection = 5;
                     break;
