@@ -9,10 +9,11 @@ import java.util.*;
 
 public class UserAccount implements Serializable {
 
-    private static final String filePathName = "data/useraccount.dat";
+    //private static final String filePathName = "data/useraccount.dat";
 
-    public static UserAccount getInstance() {
+    public static UserAccount getInstance(User user) {
         UserAccount accounts = null;
+        String filePathName = "data/" + user.getName() + ".dat";
 
         if (Files.exists(Path.of(filePathName))) {
             try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(filePathName))) {
@@ -44,10 +45,11 @@ public class UserAccount implements Serializable {
         }
         user.savedForLater(movie);
         userInMap.savedForLater(movie);
-        save();
+        save(user);
     }
 
-    private void save(){
+    private void save(User user){
+        String filePathName = "data/" + user.getName() + ".dat";
         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filePathName))) {
             out.writeObject(this); //this passes the ref to yourself
         }

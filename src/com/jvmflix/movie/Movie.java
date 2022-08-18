@@ -2,7 +2,7 @@ package com.jvmflix.movie;
 
 import javax.swing.*;
 
-public class Movie {
+public class Movie extends JFrame{
 
     private int id;
     private String title;
