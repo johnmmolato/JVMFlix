@@ -77,7 +77,7 @@ public class User implements Serializable {
         Scanner is going to read the list of movies text file, filtering by interest and
         *Or statement*
          */
-            List<String> lines = Files.readAllLines(Path.of("movieCollectionNew.csv"));
+            List<String> lines = Files.readAllLines(Path.of("conf/movieCollectionNew.csv"));
             List<Movie> entireDatabase = new ArrayList<>();
 
             for (String line : lines) {
