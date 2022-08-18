@@ -18,7 +18,6 @@ public class JVMFlixApp{
     private Movie option;
     private Genre genre;
     private Interest interest;
-
     Prompter prompter = new Prompter(new Scanner(System.in));
 
     public void initialize() throws IOException {
@@ -36,13 +35,15 @@ public class JVMFlixApp{
 
     private void options() throws IOException {
         User user = UserFactory.createUser(getName(),getAge(),getGenre());
+        UserAccount account = UserAccount.getInstance(user);
         boolean validOption = false;
-        Movie selectedMovie = getOption();
+        //Movie selectedMovie = getOption();
+        user.setSelectedMovie(getOption());
 
         while(!validOption){
             String option = prompter.prompt("Good choice! Please select from the following options\n" +
                     "[1] - to watch\n[2] - to download\n[3] - to save to watch for later\n" +
-                    "[4] - to exit\n");
+                    "[4] - to view watchList\n [5] - to exit\n");
             int choice = Integer.parseInt(option);
             switch (choice) {
                 case 1:
@@ -53,8 +54,12 @@ public class JVMFlixApp{
                     break;
                 case 3:
                     System.out.println("Saving for later");
+                    account.watchList(user,getOption());
                     break;
                 case 4:
+                    account.show();
+                    break;
+                case 5:
                     System.out.println("Good Bye!");
 
             }validOption = true;
