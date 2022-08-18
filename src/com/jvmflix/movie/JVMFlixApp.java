@@ -1,5 +1,6 @@
 package com.jvmflix.movie;
 
+import com.apps.util.Console;
 import com.apps.util.Prompter;
 import com.jvmflix.user.User;
 import com.jvmflix.user.UserFactory;
@@ -43,7 +44,7 @@ public class JVMFlixApp{
         while(!validOption){
             String option = prompter.prompt("Good choice! Please select from the following options\n" +
                     "[1] - to watch\n[2] - to download\n[3] - to save to watch for later\n" +
-                    "[4] - to view watchList\n [5] - to exit\n");
+                    "[4] - to view watchList\n[5] - to exit\n");
             int choice = Integer.parseInt(option);
             switch (choice) {
                 case 1:
@@ -67,6 +68,7 @@ public class JVMFlixApp{
     }
 
     private Movie selectedMovie() throws IOException {
+        Console.clear();
         String input = getSelect();
         Movie selected = null;
         User user = UserFactory.createUser(getName(),getAge(),getGenre());
@@ -85,6 +87,7 @@ public class JVMFlixApp{
     }
 
     private void listMovieInterest() throws IOException {
+        Console.clear();
         User user = UserFactory.createUser(getName(), getAge(), getGenre());
         List<Movie> movieInterest = user.suggestedList(getInterest());
         for (Movie movie : movieInterest) {
