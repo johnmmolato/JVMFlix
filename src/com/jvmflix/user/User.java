@@ -11,7 +11,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
-import java.io.ObjectInputStream;
 
 
 
@@ -40,7 +39,7 @@ public class User implements Serializable {
 
 
     //BUSINESS METH0DS
-    public Movie toSelect(String title) throws IOException {
+    public Movie toSelect(String title) {
         List<Movie> selectedMovie = new ArrayList<>();
 
         List<Movie> suggestedMovies = suggestedList(getInterest());
@@ -71,13 +70,18 @@ public class User implements Serializable {
         }
 
 
-        public List<Movie> videoList() throws IOException {
+        public List<Movie> videoList() {
 
         /* Pulling array of recommended movies here.
         Scanner is going to read the list of movies text file, filtering by interest and
         *Or statement*
          */
-            List<String> lines = Files.readAllLines(Path.of("conf/movieCollectionNew.csv"));
+            List<String> lines = null;
+            try {
+                lines = Files.readAllLines(Path.of("conf/movieCollectionNew.csv"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             List<Movie> entireDatabase = new ArrayList<>();
 
             for (String line : lines) {
@@ -102,7 +106,7 @@ public class User implements Serializable {
 
         }
 
-        public List<Movie> suggestedList(Interest interest) throws IOException {
+        public List<Movie> suggestedList(Interest interest) {
             List<Movie> suggested = new ArrayList<>();
             List<Movie> database = videoList();
 

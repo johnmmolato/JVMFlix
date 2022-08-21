@@ -5,12 +5,10 @@ import com.apps.util.Prompter;
 import com.jvmflix.user.User;
 import com.jvmflix.user.UserFactory;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
 public class JVMFlixApp{
-    private static final int MINOR = 18;
     private static final int MINIMUM_AGE = 1;
     private static final int MAXIMUM_AGE = 115;
     private int age;
@@ -21,7 +19,7 @@ public class JVMFlixApp{
     private Interest interest;
     Prompter prompter = new Prompter(new Scanner(System.in));
 
-    public void initialize() throws IOException {
+    public void initialize() {
         setName(userInputName());
         setAge(userInputAge());
         setGenre(userInputGenre());
@@ -34,7 +32,7 @@ public class JVMFlixApp{
 
     }
 
-    private void options() throws IOException {
+    private void options(){
         User user = UserFactory.createUser(getName(),getAge(),getGenre());
         UserAccount account = UserAccount.getInstance(user);
         int optionSelection = 0;
@@ -74,7 +72,7 @@ public class JVMFlixApp{
         }
     }
 
-    private Movie selectedMovie() throws IOException {
+    private Movie selectedMovie(){
         Console.clear();
         String input = getSelect();
         Movie selected = null;
@@ -93,7 +91,7 @@ public class JVMFlixApp{
         return prompter.prompt("Please select a movie by id number: ");
     }
 
-    private void listMovieInterest() throws IOException {
+    private void listMovieInterest() {
         Console.clear();
         User user = UserFactory.createUser(getName(), getAge(), getGenre());
         List<Movie> movieInterest = user.suggestedList(getInterest());
@@ -118,7 +116,7 @@ public class JVMFlixApp{
         return interest;
     }
 
-    private void listMovies(String name, int age, Genre genre) throws IOException {
+    private void listMovies(String name, int age, Genre genre) {
         User user = UserFactory.createUser(name, age, genre);
         List<Movie> userList = user.videoList();
 
